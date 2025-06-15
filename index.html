@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>YODCOIN - Token Oficial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body style="text-align:center; font-family:sans-serif; padding:40px;">
+  <img src="logo.png" alt="YODCOIN Logo" width="150" />
+  <h1>YODCOIN (YOD)</h1>
+  <p>Token oficial da Binance Smart Chain (BEP-20)</p>
+
+  <p><strong>Contrato:</strong><br>
+    <code>0x02ee4412ff9b3065920db3a782829371a9d77856</code>
+  </p>
+
+  <button onclick="addToken()" style="padding:10px 20px;">➕ Adicionar à MetaMask</button>
+
+  <script>
+    async function addToken() {
+      if (window.ethereum) {
+        try {
+          await window.ethereum.request({
+            method: 'wallet_watchAsset',
+            params: {
+              type: 'ERC20',
+              options: {
+                address: '0x02ee4412ff9b3065920db3a782829371a9d77856',
+                symbol: 'YOD',
+                decimals: 8,
+                image: 'https://yodcoin2.github.io/yodcoin/logo.png'
+              }
+            }
+          });
+        } catch (error) {
+          console.error('Erro ao adicionar token:', error);
+        }
+      } else {
+        alert("MetaMask não detectada.");
+      }
+    }
+  </script>
+
+  <p><a href="yodcoin.tokenlist.json" target="_blank">📄 Ver TokenList JSON</a></p>
+</body>
+</html>
