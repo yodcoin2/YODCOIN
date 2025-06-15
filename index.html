@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>YODCOIN - Token Oficial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+      text-align: center;
+      padding: 40px;
+    }
+    .container {
+      background: white;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+    button {
+      background-color: #ff9900;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      display: block;
+      margin: 6px 0;
+    }
+    code {
+      background: #eee;
+      padding: 4px 8px;
+      display: inline-block;
+      margin-top: 5px;
+      border-radius: 4px;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 5px 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" width="120" alt="YODCOIN Logo" />
+    <h1>YODCOIN (YOD)</h1>
+    <p>Token oficial da Binance Smart Chain (BEP-20)</p>
+
+    <p><strong>Contrato:</strong><br>
+      <code>0x02ee4412ff9b3065920db3a782829371a9d77856</code>
+    </p>
+
+    <button onclick="addToken()">➕ Adicionar à MetaMask</button>
+
+    <a href="https://bscscan.com/token/0x02ee4412ff9b3065920db3a782829371a9d77856" target="_blank">🔍 Ver no BscScan</a>
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x02ee4412ff9b3065920db3a782829371a9d77856" target="_blank">💱 Comprar na PancakeSwap</a>
+    <a href="yodcoin.tokenlist.json" target="_blank">📄 TokenList JSON</a>
+
+    <h3>🔗 Pull Requests Oficiais</h3>
+    <a href="https://github.com/trustwallet/assets/pull/32114" target="_blank">🟩 Trust Wallet PR #32114</a>
+    <a href="https://github.com/Uniswap/token-lists/pull/912" target="_blank">🟪 Uniswap PR #912</a>
+    <a href="https://github.com/DefiLlama/defillama-server/pull/9991" target="_blank">🔵 DefiLlama PR #9991</a>
+
+    <h3>🌐 Redes Oficiais</h3>
+    <div class="social-links">
+      <a href="https://chat.whatsapp.com/E0uyiRopZ9ICzkbon4mYZQ" target="_blank">📱 WhatsApp</a>
+      <a href="https://t.me/yodcoin2" target="_blank">✈️ Telegram</a>
+      <a href="https://x.com/coinYOD" target="_blank">🐦 Twitter (X)</a>
+      <a href="https://www.instagram.com/yod_coin" target="_blank">📸 Instagram</a>
+      <a href="https://www.tiktok.com/@yod_coin" target="_blank">🎵 TikTok</a>
+      <a href="https://www.facebook.com/yod.coin.2025" target="_blank">📘 Facebook</a>
+      <a href="https://www.linkedin.com/in/yod-coin-807ab7226/" target="_blank">💼 LinkedIn</a>
+      <a href="https://discord.com/channels/922699600710754334/922699600710754337" target="_blank">💬 Discord</a>
+      <a href="https://medium.com/@yodcoin" target="_blank">📝 Medium</a>
+      <a href="https://github.com/yodcoin2/" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+
+  <script>
+    async function addToken() {
+      if (window.ethereum) {
+        try {
+          await window.ethereum.request({
+            method: 'wallet_watchAsset',
+            params: {
+              type: 'ERC20',
+              options: {
+                address: '0x02ee4412ff9b3065920db3a782829371a9d77856',
+                symbol: 'YOD',
+                decimals: 8,
+                image: 'https://yodcoin2.github.io/YODCOIN/logo.png'
+              }
+            }
+          });
+        } catch (error) {
+          console.error(error);
+        }
+      } else {
+        alert("MetaMask não detectada.");
+      }
+    }
+  </script>
+</body>
+</html>
